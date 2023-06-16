@@ -1,0 +1,98 @@
+@import url('https://fonts.cdnfonts.com/css/azonix');
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;  
+
+    font-family: "Azonix", sans-serif !important;
+    position: relative;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/bg.jpg");
+    filter: invert(100%);
+    z-index: -1;
+}
+
+.mushroom-circle {
+    background-color: #fff;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.mushroom-img {
+    width: 135px;
+    height: 135px;
+    background-image: url(../img/mushroom-store.png);
+    background-position: center;
+    background-size: cover;
+    background-color: #f73435;
+}
+
+.mushroom-form {
+    padding: 20px;
+    margin: 20px;
+    width: 500px;
+    max-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+.mushroom-form h2 {
+    color: #fff;
+}
+
+#cart-color {
+    width: 30px;
+    height: 30px;
+    background-color: #f73435;
+    border: 2px #adb5bd solid;
+    border-radius: 100%;
+}
+
+/* mushroom power animation */
+.mushroom-form-power {
+	position: relative;
+	background: linear-gradient(0deg, #000, #272727);
+}
+.mushroom-form-power:before,
+.mushroom-form-power:after {
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	background: linear-gradient(45deg, 
+        #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, 
+        #fb0094, #0000ff, #00ff00,#ffff00, #ff0000);
+	background-size: 400%;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: -1;
+	animation: mushroompower 25s linear infinite;
+}
+@keyframes mushroompower {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+.mushroom-form-power:after {
+	filter: blur(50px);
+}
